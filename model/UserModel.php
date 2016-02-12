@@ -10,10 +10,10 @@ class UserModel extends Model
     {
         $password = sha1($password);
 
-        $query = "INSERT INTO $this->tableName (firstName, lastName, email, password) VALUES (?, ?, ?, ?)";
+        $query = "INSERT INTO $this->tableName (salutation,firstName, lastName, email, password,nickname,phone,dateOfBirth) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
         $statement = ConnectionHandler::getConnection()->prepare($query);
-        $statement->bind_param('ssss', $firstName, $lastName, $email, $password);
+        $statement->bind_param('ssssssss', $salutation, $firstName, $lastName, $email, $password ,$nickname ,$phone ,$dateOfBirth);
 
         if (!$statement->execute()) {
             throw new Exception($statement->error);

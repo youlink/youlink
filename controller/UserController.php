@@ -29,13 +29,17 @@ class UserController
 	public function doCreate()
 	{
 		if ($_POST['send']) {
-			$firstName = $_POST['firstName'];
-			$lastName  = $_POST['lastName'];
-			$email     = $_POST['email'];
-			$password  = $_POST['password'];
+			$salutation = htmlspecialchars($_POST['salutation']);
+			$firstName  = htmlspecialchars($_POST['firstName']);
+			$lastName   = htmlspecialchars($_POST['lastName']);
+			$email      = htmlspecialchars($_POST['email']);
+			$password   = htmlspecialchars($_POST['password']);
+			$nickname   = htmlspecialchars($_POST['nickname']);
+			$phone      = htmlspecialchars($_POST['phone']);
+			$dateOfBirth= htmlspecialchars($_POST['dateOfBirth']);
 
 			$userModel = new UserModel();
-			$userModel->create($firstName, $lastName, $email, $password);
+			$userModel->create($salutation, $firstName, $lastName, $email, $password ,$nickname ,$phone ,$dateOfBirth);
 		}
 
 		$this->index();

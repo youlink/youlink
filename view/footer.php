@@ -1,6 +1,5 @@
         <hr>
         <footer>
-          <p>&copy; ICT Berufsbildungcenter AG 2014</p>
         </footer>
       </div>
 
