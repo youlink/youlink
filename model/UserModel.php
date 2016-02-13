@@ -5,8 +5,10 @@ require_once('lib/Model.php');
 class UserModel extends Model
 {
     protected $tableName = 'user';
+    
+    
 
-    public function create($firstName, $lastName, $email, $password)
+    public function create($salutation, $firstName, $lastName, $email, $password ,$nickname ,$phone ,$dateOfBirth)
     {
         $password = sha1($password);
 
@@ -19,4 +21,6 @@ class UserModel extends Model
             throw new Exception($statement->error);
         }
     }
+    
+    
 }
