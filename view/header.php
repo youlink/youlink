@@ -10,7 +10,7 @@
 
     <title><?php echo $title;?></title>
 
-    <link href="/view/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/view/css/bootstrap.css" rel="stylesheet">
     <link href="/view/css/custom.css" rel="stylesheet">
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
