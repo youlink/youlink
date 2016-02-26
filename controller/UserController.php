@@ -64,36 +64,6 @@ class UserController
 		$view->display ();
 		header ( "Refresh:0" );
 	}
-	public function doLogin() {
-		$view = new View ( 'login' );
-	
-		if (!empty( $_POST ['email'] ) && !empty( $_POST ['password'] )) {
-				
-			$email = $_POST ['email'];
-			$password = $_POST ['password'];
-				
-				
-			$userModel = new UserModel ();
-			$permissionResult = $userModel->checkPermission( $email, $password );
-			if ($permissionResult->isLoggedIn()) {
-	
-				$_SESSION ["UserID"] = $permissionResult->getUserId();
-				$_SESSION ["IsAuthenticated"] = "true";
-				$_SESSION ["registering"] = "false";
-				header ( "Location: /home" );
-				return;
-	
-			} else {
-				$view = new View ( 'login' );
-				$view->ErrorMessage = "Email or password invalid!";
-				$view->display();
-				return;
-			}
-		}
-	
-		$view->ErrorMessage = "Email or password not set!";
-		$view->display ();
-	}
 
 	public function __destruct(){
 		$view = new View('footer');

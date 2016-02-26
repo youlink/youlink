@@ -35,6 +35,14 @@
           <ul class="nav navbar-nav navbar-right">
             <li class="divider">&nbsp;</li>
             <li><a href="/">Home</a></li>
+           <?php
+					if(empty($_SESSION["IsAuthenticated"])){
+						echo"<li><a href='/login'>Login</a></li>";
+					}
+					else {
+						echo"<li>Logout</li>";
+					}
+					?>
             <li><a href="/user">Benutzer</a></li>
             <li><a href="/user/create">Benutzer erstellen</a></li>
           </ul>
